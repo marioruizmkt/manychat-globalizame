@@ -1,0 +1,19 @@
+{
+  "name": "manychat-globalizame",
+  "version": "1.0.0",
+  "description": "Clon local de ManyChat usando la API oficial de Meta (Messenger, Instagram y WhatsApp Cloud API)",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning src/server.js",
+    "dev": "node --no-warnings=ExperimentalWarning --watch src/server.js",
+    "test": "node --no-warnings=ExperimentalWarning --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ManyChat Local</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <strong class="brand">⚡ ManyChat Local</strong>
+    <nav id="tabs">
+      <button data-tab="dashboard" class="active">Panel</button>
+      <button data-tab="inbox">Bandeja</button>
+      <button data-tab="flows">Flujos</button>
+      <button data-tab="triggers">Disparadores</button>
+      <button data-tab="broadcast">Difusión</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard" class="tab active">
+      <div id="banner"></div>
+      <div id="stats" class="grid"></div>
+      <div class="card">
+        <h3>Canales</h3>
+        <div id="channels"></div>
+        <p class="muted">Los canales se configuran en el archivo <code>.env</code>. Consulta el README para conectar tu app de Meta.</p>
+      </div>
+    </section>
+
+    <section id="inbox" class="tab">
+      <div class="inbox">
+        <aside>
+          <input id="contactSearch" placeholder="Buscar contacto o etiqueta…" />
+          <ul id="contactList"></ul>
+        </aside>
+        <div class="chat" id="chat">
+          <p class="muted center">Selecciona una conversación</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="flows" class="tab">
+      <div class="split">
+        <aside>
+          <button id="newFlow" class="primary">+ Nuevo flujo</button>
+          <ul id="flowList"></ul>
+        </aside>
+        <div id="flowEditor" class="card"><p class="muted">Selecciona o crea un flujo</p></div>
+      </div>
+    </section>
+
+    <section id="triggers" class="tab">
+      <div class="card">
+        <h3>Nuevo disparador</h3>
+        <form id="triggerForm"></form>
+      </div>
+      <div id="triggerList"></div>
+    </section>
+
+    <section id="broadcast" class="tab">
+      <div class="card">
+        <h3>Enviar difusión</h3>
+        <p class="muted">Por política de Meta solo se envía a contactos que te escribieron en las últimas 24 h.</p>
+        <form id="broadcastForm"></form>
+        <p id="broadcastResult"></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
